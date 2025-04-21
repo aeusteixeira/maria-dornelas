@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artista Interdisciplinar | Yoga, Danza y Autoconocimiento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'earth-purple': '#5d3a58',
+                        'fiery-orange': '#d87c4a',
+                        'deep-wine': '#8c3a4a',
+                        'warm-sand': '#e3c8b0',
+                        'soft-ivory': '#f5f0e6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: #f5f0e6;
+            color: #5d3a58;
+            scroll-behavior: smooth;
+        }
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(141, 58, 74, 0.5), transparent);
+        }
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(141, 58, 74, 0.1);
+        }
+        .quote-mark {
+            font-size: 5rem;
+            line-height: 1;
+            color: rgba(141, 58, 74, 0.2);
+            position: absolute;
+            top: -1.5rem;
+            left: -1rem;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #8c3a4a;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .btn-soft {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-soft:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+        .btn-soft:hover:before {
+            left: 100%;
+        }
+        .btn-soft:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(141, 58, 74, 0.2);
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(216, 124, 74, 0.3);
+        }
+        .bg-gradient-fire {
+            background: linear-gradient(45deg, #d87c4a, #8c3a4a);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-soft-ivory bg-opacity-90 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-light tracking-wider text-earth-purple hover:text-deep-wine transition-colors">Nombre Artista</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="nav-link text-earth-purple hover:text-deep-wine">Inicio</a>
+                <a href="#sobre" class="nav-link text-earth-purple hover:text-deep-wine">Sobre mí</a>
+                <a href="#experiencias" class="nav-link text-earth-purple hover:text-deep-wine">Experiencias</a>
+                <a href="#yoga" class="nav-link text-earth-purple hover:text-deep-wine">Yoga</a>
+                <a href="#contacto" class="nav-link text-earth-purple hover:text-deep-wine">Contacto</a>
+            </nav>
+            <button class="md:hidden text-earth-purple">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-earth-purple to-deep-wine">
+        <video autoplay muted loop class="hero-video mix-blend-overlay">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-dancing-under-floating-fabric-17739-large.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-earth-purple/30 to-deep-wine/20"></div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-light text-warm-sand mb-8 leading-tight fade-in text-glow">
+                "El cuerpo conoce cosas que la mente ignora"
+            </h1>
+            <a href="#experiencias" class="inline-block mt-8 px-8 py-3 border-2 border-warm-sand text-warm-sand hover:bg-warm-sand hover:bg-opacity-20 transition-all duration-300 btn-soft">
+                Descubre más
+            </a>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 text-center">
+            <a href="#sobre" class="inline-block animate-bounce">
+                <i class="fas fa-chevron-down text-warm-sand text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre" class="py-20 bg-soft-ivory">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light text-deep-wine mb-6">Sobre mí</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Retrato de la artista" class="rounded-lg shadow-lg w-full h-auto object-cover transform transition hover:scale-105 duration-500">
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-xl leading-relaxed mb-6">
+                        Artista interdisciplinar, yogui, budista, sonhadora, tecedora de mundos más naturales y conscientes. Mi camino ha sido una danza constante entre el arte escénico, las prácticas corporales y la búsqueda espiritual.
+                    </p>
+                    <p class="text-xl leading-relaxed mb-8">
+                        Creo en el cuerpo como templo y en el movimiento como lenguaje sagrado. Cada gesto, cada respiración, es un acto poético de reconexión con lo esencial.
+                    </p>
+                    <a href="#" class="inline-block px-6 py-2 border-2 border-deep-wine text-deep-wine hover:bg-deep-wine hover:text-soft-ivory transition-all duration-300 btn-soft">
+                        Conoce mi historia completa
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-16 bg-gradient-to-r from-warm-sand to-soft-ivory">
+        <div class="container mx-auto px-6 max-w-3xl text-center relative">
+            <span class="quote-mark">"</span>
+            <blockquote class="text-2xl md:text-3xl font-light italic text-earth-purple mb-6">
+                Todo es energía y eso es todo lo que hay. Sintoniza con la frecuencia de la realidad que deseas y no podrás evitar obtener esa realidad. No puede ser de otra manera. Esto no es filosofía. Esto es física.
+            </blockquote>
+            <p class="text-deep-wine font-medium">— Albert Einstein</p>
+        </div>
+    </section>
+
+    <!-- Mi Misión -->
+    <section class="py-20 bg-soft-ivory">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light text-deep-wine mb-6">Mi misión</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/3">
+                    <p class="text-xl leading-relaxed mb-6">
+                        Te invito a un viaje de reconexión con tu energía creativa, tu autenticidad y tu potencia personal. A través de prácticas corporales, espacios de silencio y experiencias compartidas, cultivamos juntos una relación más amorosa y consciente con nosotros mismos y con el mundo.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Mi labor es crear contenedores sagrados donde puedas recordar quién eres, más allá de las máscaras y los roles sociales. Donde el cuerpo pueda hablar y el alma pueda danzar libremente.
+                    </p>
+                </div>
+                <div class="md:w-1/3">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-warm-sand transform transition hover:scale-105 duration-500">
+                        <h3 class="text-xl font-light text-fiery-orange mb-4">Principios que guían mi trabajo</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-fiery-orange mr-2">•</span>
+                                <span class="text-earth-purple">El cuerpo como vehículo de sabiduría</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-fiery-orange mr-2">•</span>
+                                <span class="text-earth-purple">La escucha como práctica radical</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-fiery-orange mr-2">•</span>
+                                <span class="text-earth-purple">El arte como puente hacia lo sagrado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-fiery-orange mr-2">•</span>
+                                <span class="text-earth-purple">La naturaleza como maestra</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Yoga -->
+    <section class="py-16 bg-gradient-to-b from-warm-sand to-soft-ivory">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <div class="relative pb-[56.25%] overflow-hidden rounded-lg shadow-lg transform transition hover:scale-[1.02] duration-500">
+                        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/6q4OQzX3GXQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-light text-deep-wine mb-6">Yoga como experiencia viva</h2>
+                    <p class="text-lg leading-relaxed mb-6">
+                        Una práctica que trasciende el tapete y penetra la rutina, transformando cada gesto cotidiano en un acto de presencia y reverencia.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        En mis clases, exploramos el yoga como un lenguaje corporal que nos permite dialogar con nuestras profundidades, despertando memorias celulares y abriendo espacios internos de silencio fértil.
+                    </p>
+                    <a href="#yoga" class="inline-block mt-6 px-6 py-2 border-2 border-deep-wine text-deep-wine hover:bg-deep-wine hover:text-soft-ivory transition-all duration-300 btn-soft">
+                        Conoce mis clases
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencias -->
+    <section id="experiencias" class="py-20 bg-soft-ivory">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light text-deep-wine mb-6">Experiencias</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl max-w-3xl mx-auto text-earth-purple">
+                    Espacios cuidadosamente diseñados para que puedas explorar diferentes dimensiones de tu ser.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Yoga -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-300 experience-card border border-warm-sand/30">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Yoga" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-light text-fiery-orange mb-3">Yoga – Conexión y Equilibrio</h3>
+                        <p class="mb-4 text-earth-purple">
+                            Práctica viva entre cuerpo, mente y espíritu. Aulas regulares en estúdio y vivências sazonais.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-deep-wine hover:underline font-medium">
+                            Saber más
+                            <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Retiro ALMAr -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-300 experience-card border border-warm-sand/30">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Retiro ALMAr" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-light text-fiery-orange mb-3">Retiro ALMAr – Jornada Interior</h3>
+                        <p class="mb-4 text-earth-purple">
+                            Retiro entre naturaleza, medos e reconexión con la energía creativa.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-deep-wine hover:underline font-medium">
+                            Saber más
+                            <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- OKUPA Cuerpo -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-300 experience-card border border-warm-sand/30">
+                    <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="OKUPA Cuerpo" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-light text-fiery-orange mb-3">OKUPA Cuerpo – Expressão e Movimento</h3>
+                        <p class="mb-4 text-earth-purple">
+                            Laboratório sensorial de dança, arte e corpo como linguagem sutil.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-deep-wine hover:underline font-medium">
+                            Saber más
+                            <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Curso el SELF Quántico -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-300 experience-card border border-warm-sand/30">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Curso el SELF Quántico" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-light text-fiery-orange mb-3">Curso el SELF Quántico – Consciência Expandida</h3>
+                        <p class="mb-4 text-earth-purple">
+                            Curso de autoconhecimento baseado em práticas integrativas e visão quântica.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-deep-wine hover:underline font-medium">
+                            Saber más
+                            <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Retiro ECOar -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm transition-all duration-300 experience-card border border-warm-sand/30">
+                    <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Retiro ECOar" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-light text-fiery-orange mb-3">Retiro ECOar – Natureza e Silêncio</h3>
+                        <p class="mb-4 text-earth-purple">
+                            Vivência em silêncio, terra e escuta profunda. Ideal para restauração energética.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-deep-wine hover:underline font-medium">
+                            Saber más
+                            <i class="fas fa-chevron-right ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Próximos Eventos -->
+                <div class="bg-gradient-fire rounded-lg overflow-hidden shadow-sm transition-all duration-300 experience-card flex flex-col justify-center items-center p-8 text-center text-soft-ivory">
+                    <h3 class="text-2xl font-light mb-4">Próximos Eventos</h3>
+                    <p class="mb-6">
+                        Descubre las experiencias que están por venir y reserva tu espacio con tiempo.
+                    </p>
+                    <a href="#" class="inline-flex items-center px-6 py-2 border-2 border-soft-ivory text-soft-ivory hover:bg-soft-ivory hover:text-deep-wine transition-all duration-300 btn-soft">
+                        Ver calendario
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yoga Section -->
+    <section id="yoga" class="py-20 bg-gradient-to-b from-warm-sand to-soft-ivory">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light text-deep-wine mb-6">Yoga</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl italic text-earth-purple">
+                    "El viaje del yoga comienza con lo denso y nos guía hasta el alma."
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Hatha Vinyasa -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-warm-sand/30 transform transition hover:scale-105 duration-500">
+                    <h3 class="text-xl font-light text-fiery-orange mb-3">Hatha Vinyasa</h3>
+                    <p class="mb-4 text-earth-purple">
+                        Un flujo dinámico que sincroniza movimiento y respiración, construyendo fuerza y flexibilidad mientras cultivamos presencia.
+                    </p>
+                    <div class="text-sm text-deep-wine">
+                        <p><strong>Horarios:</strong> Lunes y Miércoles 9:00 - 10:30</p>
+                        <p><strong>Nivel:</strong> Todos los niveles</p>
+                    </div>
+                </div>
+                
+                <!-- Yin Yoga -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-warm-sand/30 transform transition hover:scale-105 duration-500">
+                    <h3 class="text-xl font-light text-fiery-orange mb-3">Yin Yoga</h3>
+                    <p class="mb-4 text-earth-purple">
+                        Práctica profunda y meditativa donde mantenemos posturas por varios minutos, trabajando los tejidos conectivos y cultivando la escucha interna.
+                    </p>
+                    <div class="text-sm text-deep-wine">
+                        <p><strong>Horarios:</strong> Martes y Jueves 18:00 - 19:15</p>
+                        <p><strong>Nivel:</strong> Principiantes a avanzados</p>
+                    </div>
+                </div>
+                
+                <!-- Yoga Danza -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-warm-sand/30 transform transition hover:scale-105 duration-500">
+                    <h3 class="text-xl font-light text-fiery-orange mb-3">Yoga Danza</h3>
+                    <p class="mb-4 text-earth-purple">
+                        Fusión de yoga y movimiento expresivo, donde exploramos la fluidez natural del cuerpo como vehículo de expresión artística y espiritual.
+                    </p>
+                    <div class="text-sm text-deep-wine">
+                        <p><strong>Horarios:</strong> Viernes 17:00 - 18:30</p>
+                        <p><strong>Nivel:</strong> Intermedio</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-xl italic mb-8 text-earth-purple">
+                    "No utilizamos el cuerpo para entrar en las posturas, sino las posturas para entrar en el cuerpo."
+                </p>
+                <a href="#" class="inline-block px-8 py-3 bg-deep-wine text-soft-ivory hover:bg-earth-purple transition-all duration-300 btn-soft">
+                    Experimenta una clase
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- OKUPA Cuerpo -->
+    <section class="py-20 bg-soft-ivory">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light text-deep-wine mb-6">OKUPA Cuerpo</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl italic text-earth-purple">
+                    "Todo movimiento es un pensamiento hecho visible." — Rudolf Laban
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="OKUPA Cuerpo" class="rounded-lg shadow-lg w-full h-auto object-cover transform transition hover:scale-105 duration-500">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-light text-fiery-orange mb-4">Laboratorio sensorial de movimiento</h3>
+                    <p class="mb-4 text-earth-purple">
+                        OKUPA Cuerpo es un espacio de investigación y experimentación donde integramos Yoga, Tantra, Danza y Teatro Físico para explorar las múltiples dimensiones de nuestro ser a través del movimiento.
+                    </p>
+                    <p class="mb-4 text-earth-purple">
+                        Cada encuentro es un viaje único donde trabajamos con la energía creativa, la niña interior y la expresión libre, liberando el control de la mente para que el cuerpo pueda hablar su lenguaje primordial.
+                    </p>
+                    <ul class="mb-6 space-y-2 text-earth-purple">
+                        <li class="flex items-start">
+                            <span class="text-fiery-orange mr-2">•</span>
+                            <span>Exploración de patrones de movimiento orgánico</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-fiery-orange mr-2">•</span>
+                            <span>Improvisación guiada y libre</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-fiery-orange mr-2">•</span>
+                            <span>Consciencia corporal expandida</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-fiery-orange mr-2">•</span>
+                            <span>Integración de sombras y arquetipos</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-block px-6 py-2 border-2 border-deep-wine text-deep-wine hover:bg-deep-wine hover:text-soft-ivory transition-all duration-300 btn-soft">
+                        Próximas fechas
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-xl italic text-earth-purple">
+                    "Liberar o controle da mente para que o cuerpo fale."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SELF Quántico -->
+    <section class="py-20 bg-gradient-to-r from-earth-purple to-deep-wine">
+        <div class="container mx-auto px-6 max-w-5xl text-center text-soft-ivory">
+            <h2 class="text-3xl md:text-4xl font-light mb-6">Curso el SELF Quántico</h2>
+            <div class="section-divider w-24 mx-auto mb-8 bg-soft-ivory/50"></div>
+            <p class="text-xl italic mb-8">
+                "El conocimiento expande. El autoconocimiento libera."
+            </p>
+            
+            <div class="max-w-3xl mx-auto mb-12">
+                <p class="mb-6">
+                    Un viaje de autodescubrimiento que integra prácticas corporales, herramientas de psicología transpersonal y principios de la física cuántica aplicados al desarrollo personal.
+                </p>
+                <p class="mb-6">
+                    Este curso está en construcción, tejiéndose con paciencia y cuidado. Si sientes el llamado a profundizar en tu proceso de autoconocimiento, déjame tu contacto y serás la primera en saber cuando esté disponible.
+                </p>
+                <p class="italic">
+                    "El médico interior es el que mejor cura. El hombre sabio debería considerar que la salud es la mayor de las bendiciones humanas." — Hipócrates
+                </p>
+            </div>
+            
+            <a href="#contacto" class="inline-block px-8 py-3 border-2 border-soft-ivory text-soft-ivory hover:bg-soft-ivory hover:text-deep-wine transition-all duration-300 btn-soft">
+                Quiero saber más
+            </a>
+        </div>
+    </section>
+
+    <!-- Retiros -->
+    <section class="py-20 bg-soft-ivory">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light text-deep-wine mb-6">Retiros</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+                <p class="text-xl max-w-3xl mx-auto text-earth-purple">
+                    Espacios de inmersión profunda en entornos naturales cuidadosamente seleccionados.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Retiro ALMAr -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-warm-sand/30 transform transition hover:scale-105 duration-500">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Retiro ALMAr" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-light text-fiery-orange mb-3">Retiro ALMAr</h3>
+                        <p class="mb-4 text-earth-purple">
+                            Jornada entre mar, travessia, expressão e criatividade. Un espacio para soltar amarras y navegar hacia territorios internos inexplorados.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-deep-wine">Próxima edición: Octubre 2023</span>
+                            <a href="#" class="text-deep-wine hover:underline text-sm font-medium">
+                                Ver detalles
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Retiro ECOar -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-warm-sand/30 transform transition hover:scale-105 duration-500">
+                    <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Retiro ECOar" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-light text-fiery-orange mb-3">Retiro ECOar</h3>
+                        <p class="mb-4 text-earth-purple">
+                            Vivência em silêncio, terra e escuta profunda. Un refugio en la naturaleza para restaurar tu energía esencial y reconectar con tu ritmo natural.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-deep-wine">Próxima edición: Noviembre 2023</span>
+                            <a href="#" class="text-deep-wine hover:underline text-sm font-medium">
+                                Ver detalles
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-8 py-3 border-2 border-deep-wine text-deep-wine hover:bg-deep-wine hover:text-soft-ivory transition-all duration-300 btn-soft">
+                    Descubre todos los retiros
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 bg-gradient-to-r from-warm-sand to-fiery-orange/80">
+        <div class="container mx-auto px-6 max-w-3xl text-center text-earth-purple">
+            <h2 class="text-3xl md:text-4xl font-light mb-6">La Llave</h2>
+            <div class="section-divider w-24 mx-auto mb-8 bg-earth-purple/50"></div>
+            <p class="text-xl mb-8">
+                Te abro las puertas de mi hogar para compartir reflexiones, recomendaciones y novidades íntimas.
+            </p>
+            
+            <form class="max-w-md mx-auto">
+                <div class="mb-4">
+                    <input type="email" placeholder="Tu email" class="w-full px-4 py-3 border-b border-earth-purple bg-transparent focus:outline-none focus:border-deep-wine placeholder-earth-purple placeholder-opacity-70 text-center">
+                </div>
+                <button type="submit" class="w-full px-6 py-3 bg-earth-purple text-soft-ivory hover:bg-deep-wine transition-all duration-300 btn-soft">
+                    Recibir la llave
+                </button>
+            </form>
+            
+            <p class="text-sm mt-4 text-earth-purple">
+                Respeto tu privacidad. Nunca compartiré tu información.
+            </p>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="py-16 bg-soft-ivory">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-light text-deep-wine mb-6">Miradas compartidas</h2>
+                <div class="section-divider w-24 mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Yoga en la naturaleza" class="w-full h-48 object-cover rounded transform transition hover:scale-110 duration-500">
+                <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Retiro" class="w-full h-48 object-cover rounded transform transition hover:scale-110 duration-500">
+                <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Meditación" class="w-full h-48 object-cover rounded transform transition hover:scale-110 duration-500">
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Flores" class="w-full h-48 object-cover rounded transform transition hover:scale-110 duration-500">
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center justify-center px-6 py-2 border-2 border-deep-wine text-deep-wine hover:bg-deep-wine hover:text-soft-ivory transition-all duration-300 btn-soft rounded-full">
+                    <i class="fab fa-instagram mr-2"></i>
+                    Sígueme en Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-gradient-to-b from-earth-purple to-deep-wine">
+        <div class="container mx-auto px-6 max-w-5xl text-soft-ivory">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light mb-6">Contacto</h2>
+                <div class="section-divider w-24 mx-auto mb-8 bg-soft-ivory/50"></div>
+                <p class="text-xl max-w-3xl mx-auto">
+                    Si sientes el llamado a profundizar en alguna de estas prácticas o simplemente quieres compartir tus reflexiones, estaré encantada de escucharte.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <form>
+                        <div class="mb-6">
+                            <input type="text" placeholder="Tu nombre" class="w-full px-4 py-3 border-b border-soft-ivory bg-transparent focus:outline-none focus:border-warm-sand placeholder-soft-ivory placeholder-opacity-70">
+                        </div>
+                        <div class="mb-6">
+                            <input type="email" placeholder="Tu email" class="w-full px-4 py-3 border-b border-soft-ivory bg-transparent focus:outline-none focus:border-warm-sand placeholder-soft-ivory placeholder-opacity-70">
+                        </div>
+                        <div class="mb-6">
+                            <textarea placeholder="Tu mensaje" rows="4" class="w-full px-4 py-3 border-b border-soft-ivory bg-transparent focus:outline-none focus:border-warm-sand placeholder-soft-ivory placeholder-opacity-70"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-soft-ivory text-deep-wine hover:bg-warm-sand transition-all duration-300 btn-soft">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-soft-ivory/10 p-8 rounded-lg shadow-sm border border-soft-ivory/20 backdrop-blur-sm h-full">
+                        <h3 class="text-xl font-light text-warm-sand mb-6">Otras formas de conectar</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-warm-sand mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>Estudio de Yoga Alma<br>Barcelona, España</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-warm-sand mr-4 mt-1"><i class="fas fa-envelope"></i></span>
+                                <span>hola@nombreartista.com</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-warm-sand mr-4 mt-1"><i class="fas fa-phone"></i></span>
+                                <span>+34 123 456 789</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-light text-warm-sand mb-4">Sígueme</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-soft-ivory hover:text-warm-sand text-xl"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-soft-ivory hover:text-warm-sand text-xl"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="text-soft-ivory hover:text-warm-sand text-xl"><i class="fab fa-spotify"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-earth-purple text-soft-ivory py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-light tracking-wider hover:text-warm-sand transition-colors">Nombre Artista</a>
+                    <p class="mt-2 text-sm opacity-80">Tejiendo mundos más conscientes</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="#inicio" class="hover:text-warm-sand transition-colors">Inicio</a>
+                        <a href="#sobre" class="hover:text-warm-sand transition-colors">Sobre mí</a>
+                        <a href="#experiencias" class="hover:text-warm-sand transition-colors">Experiencias</a>
+                        <a href="#contacto" class="hover:text-warm-sand transition-colors">Contacto</a>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-warm-sand transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-warm-sand transition-colors"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="hover:text-warm-sand transition-colors"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-soft-ivory/20 mt-8 pt-8 text-center text-sm opacity-80">
+                <p>© 2023 Nombre Artista. Todos los derechos reservados.</p>
+                <p class="mt-2">Diseñado con amor y presencia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initial check
+            fadeInOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add ripple effect to buttons
+            document.querySelectorAll('.btn-soft').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple-effect';
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
